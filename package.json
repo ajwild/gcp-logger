@@ -1,0 +1,35 @@
+{
+  "name": "@andthen/gcp-logger",
+  "version": "0.0.1",
+  "description": "A pino logger which sends logs to Google Cloud Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajwild/gcp-logger.git"
+  },
+  "keywords": [
+    "log",
+    "logger",
+    "logging",
+    "gcp",
+    "google",
+    "cloud",
+    "platform"
+  ],
+  "author": "Alex Wild",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajwild/gcp-logger/issues"
+  },
+  "homepage": "https://github.com/ajwild/gcp-logger#readme",
+  "dependencies": {
+    "@types/pino": "^6.0.0",
+    "jwebt": "0.0.3",
+    "jwebt-gcp": "0.0.3",
+    "pino": "^6.2.1",
+    "pino-transmit-http": "git+https://github.com/ajwild/pino-transmit-http.git#983526b"
+  }
+}

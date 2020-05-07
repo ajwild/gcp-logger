@@ -51,7 +51,7 @@
     "jwebt": "0.0.3",
     "jwebt-gcp": "0.0.3",
     "pino": "^6.2.1",
-    "pino-transmit-http": "git+https://github.com/ajwild/pino-transmit-http.git#983526b"
+    "pino-transmit-http": "git+https://github.com/ajwild/pino-transmit-http.git#cc74494"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",

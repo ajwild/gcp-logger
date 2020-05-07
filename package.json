@@ -8,7 +8,11 @@
   "unpkg": "lib-umd/gcp-logger.min.js",
   "jsdelivr": "lib-umd/gcp-logger.min.js",
   "sideEffects": false,
-  "files": ["lib-cjs", "lib-esm", "lib-umd"],
+  "files": [
+    "lib-cjs",
+    "lib-esm",
+    "lib-umd"
+  ],
   "scripts": {
     "build": "npm run build:cjs && npm run build:esm && npm run build:umd",
     "prebuild:cjs": "rimraf lib-cjs",

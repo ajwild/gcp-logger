@@ -1,0 +1,36 @@
+{
+	"envs": [
+		"browser",
+		"worker",
+		"jest"
+	],
+	"ignores": [
+		"./*.config.js"
+	],
+	"overrides": [
+		{
+			"files": "!./**/*.test.ts",
+			"plugins": [
+				"functional"
+			],
+			"extends": [
+				"plugin:functional/external-recommended",
+				"plugin:functional/recommended"
+			]
+		},
+		{
+			"files": "./**/*.test.ts",
+			"plugins": [
+				"jest"
+			],
+			"extends": [
+				"plugin:jest/all"
+			],
+			"rules": {
+				"jest/no-hooks": 0
+			}
+		}
+	],
+	"prettier": true,
+	"space": true
+}

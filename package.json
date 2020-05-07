@@ -2,9 +2,30 @@
   "name": "@andthen/gcp-logger",
   "version": "0.0.1",
   "description": "A pino logger which sends logs to Google Cloud Platform",
-  "main": "index.js",
+  "main": "lib-cjs/index.js",
+  "module": "lib-esm/index.js",
+  "types": "lib-esm/index.d.ts",
+  "unpkg": "lib-umd/gcp-logger.min.js",
+  "jsdelivr": "lib-umd/gcp-logger.min.js",
+  "sideEffects": false,
+  "files": ["lib-cjs", "lib-esm", "lib-umd"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:cjs && npm run build:esm && npm run build:umd",
+    "prebuild:cjs": "rimraf lib-cjs",
+    "build:cjs": "tsc --declaration",
+    "prebuild:esm": "rimraf lib-esm",
+    "build:esm": "tsc --module es6 --outDir lib-esm --declaration",
+    "prebuild:umd": "rimraf lib-umd",
+    "build:umd": "webpack",
+    "format": "xo --fix",
+    "lint": "xo",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test",
+    "test": "npm run lint && npm run unit",
+    "unit": "jest",
+    "preversion": "npm run test",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -31,5 +52,19 @@
     "jwebt-gcp": "0.0.3",
     "pino": "^6.2.1",
     "pino-transmit-http": "git+https://github.com/ajwild/pino-transmit-http.git#983526b"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "eslint-plugin-functional": "^3.0.1",
+    "eslint-plugin-jest": "^23.9.0",
+    "jest": "^26.0.1",
+    "rimraf": "^3.0.2",
+    "terser-webpack-plugin": "^3.0.1",
+    "ts-jest": "^25.5.0",
+    "ts-loader": "^7.0.3",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "xo": "^0.30.0"
   }
 }
